@@ -33,6 +33,14 @@ function verifArrNums(nums)
  */
 function busquedaNumeros(nums, obj) 
 {
+    // Verificar si "nums" no es un array
+    if(!Array.isArray(nums)) {
+        return "El parámetro \"nums\" debe ser un arreglo";
+    }
+
+    // Convertir "obj" a int
+    obj = parseInt(obj);
+
     // Verificar tamaño del arreglo
     if(nums.length < 2 || nums.length > 104) 
     {
@@ -71,7 +79,8 @@ function busquedaNumeros(nums, obj)
                 pos2 = j;
 
                 // Retornar descripcion
-                return "nums[" + i + "] + nums[" + j + "] = " + obj;
+                return "nums[" + i + "] + nums[" + j + "] = " 
+                        + nums[i] + " + " + nums[j] + " = " + obj;
             }
         }
     }
