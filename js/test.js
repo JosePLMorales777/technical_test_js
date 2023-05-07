@@ -22,6 +22,29 @@ function verifArrNums(nums)
 }
 
 /**
+ * Función para obtener la posición de un número en un arreglo
+ * @param   {Number} num Número que se busca
+ * @param   {Array}  arr Arreglo que se recorre
+ * @returns {Number} Posición del número
+ */
+function numEnArreglo(num, arr) 
+{
+    // Recorrer arreglo
+    for(var i = 0; i < arr.length; i++) 
+    {
+        // Si se encuentra el número
+        if(arr[i] === num) 
+        {
+            // Retornar pos
+            return i;
+        }
+    }
+
+    // Retornar 0
+    return 0;
+}
+
+/**
  * Función para encontrar los dos numeros 
  * dentro de un arreglo que suman 
  * un objetivo entero
@@ -57,31 +80,47 @@ function busquedaNumeros(nums, obj)
         return "El objetivo debe estar entre -109 y 10";
     }
 
+    // Guardar arreglo
+    let numsOrign = nums.slice();
+    // Ordenar arreglo
+    nums.sort(function(a, b) { return a - b; });
+
+    // Aux. inicio
+    var iniArr = 0;
+    // Aux. fin
+    var finArr = nums.length - 1;
+
     // Posicion 1
     var pos1 = -1;
     // Posicion 2
     var pos2 = -1;
 
-    // Recorrer arreglo de numeros
-    for(var i = 0; i < nums.length; i++)
+    // Mientras ini. sea menor al fin.
+    while(iniArr < finArr) 
     {
-        // Recorrer arreglo de numeros (anidacion)
-        for(var j = 0; j < nums.length; j++) 
+        // Obtener suma
+        let suma = nums[iniArr] + nums[finArr];
+
+        // Si la suma es igual al objetivo
+        if(suma === obj) 
         {
-            // Obtener suma
-            let suma = nums[i] + nums[j];
+            // OBTENER POSICIONES ORIGINALES
+            pos1 = numEnArreglo(nums[iniArr], numsOrign);
+            pos2 = numEnArreglo(nums[finArr], numsOrign);
 
-            // Si la suma es igual al objetivo
-            if(suma === obj)
-            {
-                // Indicar posicion
-                pos1 = i;
-                pos2 = j;
-
-                // Retornar descripcion
-                return "nums[" + i + "] + nums[" + j + "] = " 
-                        + nums[i] + " + " + nums[j] + " = " + obj;
-            }
+            // Retornar descripcion
+            return "nums[" + pos1 + "] + nums[" + pos2 + "] = "
+                    + numsOrign[pos1] + " + " + numsOrign[pos2] + " = " + obj; 
+        }
+        else if(suma < obj) // Si la suma es menor al objetivo
+        {
+            // Incr. inicio
+            iniArr++;
+        }
+        else
+        {
+            // Decr. fin.
+            finArr--;
         }
     }
 
