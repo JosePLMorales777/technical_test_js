@@ -4,7 +4,7 @@ Prueba técnica designada a José Pablo León Morales para revisar sus conocimie
 
 Technical test designed to José Pablo León Morales to verify his knowledge and skills using JavaScript.
 
-# Tecnical Test description
+# Technical Test description
 
 Esta prueba técnica consistió en codificar una función que sea capaz de encontrar en un arreglo dado dos números que sumados den como resultado un objetivo numérico.
 En esta prueba se asume que:
