@@ -56,7 +56,7 @@ function numEnArreglo(num, arr)
  */
 function busquedaNumeros(nums, obj) 
 {
-    // Verificar si "nums" no es un array
+    // Verificar si "nums" no es un arreglo
     if(!Array.isArray(nums)) {
         return "El parámetro \"nums\" debe ser un arreglo";
     }
@@ -127,6 +127,77 @@ function busquedaNumeros(nums, obj)
     return "No existe una respuesta...";
 }
 
-/* Comprobaciones */
+/**
+ * Función para añadir un salto de línea
+ */
+function anadirSaltoLinea()
+{
+    // Obtener div central
+    let divCentral = document.getElementById("div-central");
+
+    // Crear salto
+    let saltoLinea = document.createElement("br");
+
+    // Añadir salto
+    divCentral.appendChild(saltoLinea);
+}
+
+/**
+ * Función para presentar gráficamente una operación para 
+ * encontrar los números que suman el objetivo
+ * @param   {Array}  nums Arreglo de numeros
+ * @param   {Number} obj Objetivo entero
+ */
+function busquedaNumerosGraf(nums, obj)
+{
+    // Obtener div central
+    let divCentral = document.getElementById("div-central");
+
+    // Crear elemento div
+    let elementoDiv = document.createElement("div");
+    // Dar estilo
+    elementoDiv.classList.add("card", "shadow-sm", "pt-3", "px-3", "pb-1");
+
+    // Si "nums" es un arreglo
+    if(Array.isArray(nums))
+    {
+        // Crear párrafo para mostrar arreglo
+        let parrafSArr = document.createElement("p");
+        // Crear nodo de texto
+        let nodoTxtSArr = document.createTextNode("Arreglo: [" + nums.join(", ") + "]");
+        // Añadir nodo de texto a párrafo
+        parrafSArr.appendChild(nodoTxtSArr);
+
+        // Añadir párrafo a div
+        elementoDiv.appendChild(parrafSArr);
+    }
+
+    // Crear párrafo para mostrar objetivo
+    let parrafSObj = document.createElement("p");
+    // Crear nodo de texto
+    let nodoTxtSObj = document.createTextNode("Objetivo: " + obj);
+    // Añadir nodo de texto a párrafo
+    parrafSObj.appendChild(nodoTxtSObj);
+
+    // Obtener resultado
+    let resultado = busquedaNumeros(nums, obj);
+
+    // Crear párrafo para mostrar resultado
+    let parrafSRes = document.createElement("p");
+    // Crear nodo de texto
+    let nodoTxtSRes = document.createTextNode(resultado);
+    // Añadir nodo de texto a párrafo
+    parrafSRes.appendChild(nodoTxtSRes);
+    
+    // AÑADIR PÁRRAFOS A DIV
+    elementoDiv.appendChild(parrafSObj);
+    elementoDiv.appendChild(parrafSRes);
+
+    // AÑADIR DIV A DIV CENTRAL
+    divCentral.appendChild(elementoDiv);
+}
+
+/* Comprobaciones - consola */
 console.log(busquedaNumeros([0, 7, 2], 9));
 console.log(busquedaNumeros([-1, -44, 5, 9, 66, 99, 106, 8, 2, 10], 7));
+console.log(busquedaNumeros([4, 5, -22, -1, -42, 1, -6, -23, -44, -35], -77));
