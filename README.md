@@ -8,7 +8,7 @@ Technical test designed to José Pablo León Morales to verify his knowledge and
 
 Esta prueba técnica consistió en codificar una función que sea capaz de encontrar en un arreglo dado dos números que sumados den como resultado un objetivo numérico.
 En esta prueba se asume que:
-* Cada entrada tiene exactame una solución
+* Cada entrada tiene exactamente una solución
 * No se puede utilizar un mismo elemento en el arreglo dos o más veces
 Además, se toman en cuenta las siguientes restricciones
 * La longitud del arreglo debe estar entre 2 y 104 elementos
