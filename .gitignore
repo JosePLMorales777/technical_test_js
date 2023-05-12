@@ -1,0 +1,5 @@
+ # IntelliJ settings
+/.idea/
+
+# npm dependencies (huge!)
+node_modules
