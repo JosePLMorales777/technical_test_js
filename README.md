@@ -23,3 +23,9 @@ Also, we take into account the following restrictions:
 * Array size must be between 2 and 104 items
 * All array items must be between -109 and 109
 * Target value must be between -109 and 10
+
+# How to run project
+```shell
+> npm install
+> npm start
+```
