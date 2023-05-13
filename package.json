@@ -1,0 +1,23 @@
+{
+  "name": "technical_test_js",
+  "version": "1.0.0",
+  "description": "Prueba técnica designada a José Pablo León Morales para revisar sus conocimientos y habilidades en JavaScript.",
+  "main": "js/test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosePLMorales777/technical_test_js.git"
+  },
+  "author": "Jose Pablo",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JosePLMorales777/technical_test_js/issues"
+  },
+  "homepage": "https://github.com/JosePLMorales777/technical_test_js#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
