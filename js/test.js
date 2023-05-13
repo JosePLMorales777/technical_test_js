@@ -20,7 +20,7 @@ function verifyArrayNumbers(numbers) {
  * @param   {Array}  arr Arreglo que se recorre
  * @returns {Number} Posición del número
  */
-function numEnArreglo(searchNumber, arr) {
+function posicionNumeroEnArreglo(searchNumber, arr) {
     return arr.findIndex(number => searchNumber === number);
 }
 
@@ -82,8 +82,8 @@ function busquedaNumeros(nums, obj) {
         // Si la suma es igual al objetivo
         if (suma === obj) {
             // OBTENER POSICIONES ORIGINALES
-            pos1 = numEnArreglo(nums[iniArr], numsOrign);
-            pos2 = numEnArreglo(nums[finArr], numsOrign);
+            pos1 = posicionNumeroEnArreglo(nums[iniArr], numsOrign);
+            pos2 = posicionNumeroEnArreglo(nums[finArr], numsOrign);
 
             // Retornar descripcion
             return "nums[" + pos1 + "] + nums[" + pos2 + "] = "
@@ -107,6 +107,7 @@ function getDivCentral() {
     if (!divCentralRef) {
         divCentralRef = document.getElementById("div-central");
     }
+
     return divCentralRef;
 }
 
@@ -130,7 +131,7 @@ function anadirSaltoLinea() {
  * @param   {Array}  nums Arreglo de numeros
  * @param   {Number} obj Objetivo entero
  */
-function busquedaNumerosGraf(nums, obj) {
+function busquedaNumerosGraficamente(nums, obj) {
     // Obtener div central
     const divCentral = getDivCentral();
 
@@ -181,3 +182,20 @@ function busquedaNumerosGraf(nums, obj) {
 console.log(busquedaNumeros([0, 7, 2], 9));
 console.log(busquedaNumeros([-1, -44, 5, 9, 66, 99, 106, 8, 2, 10], 7));
 console.log(busquedaNumeros([4, 5, -22, -1, -42, 1, -6, -23, -44, -35], -77));
+
+/* Comprobaciones gráficas en la pantalla */
+busquedaNumerosGraficamente([0, 7, 2], 9); // Operación 1
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([-1, -44, 5, 9, 66, 99, 106, 8, 2, 10], 7); // Operación 2
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([-5, 1, -30, 2, -48, 3, 31, -38, , -11, 4, 5, -62, -44], -100); // Operación 3
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([-5, 6, -4, -25, -7, 8, -88, -14, 3, -28, -27, -100, -33, -35], 1); // Operación 4
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([1], 1); // Operación con error 1
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([-110, -8, 7, 10], 1); // Operación con error 2
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([-8, 7, 110, 10], 1); // Operación con error 3
+anadirSaltoLinea(); // Salto de línea
+busquedaNumerosGraficamente([110, -99, 2, 3, 4], 11); // Operación con error 4
